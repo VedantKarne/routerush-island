@@ -36,21 +36,27 @@ If you just want to **use the app** (and not build from source), download a read
 
 > **📥 Download Link**: **[GitHub Releases](https://github.com/VedantKarne/routerush-island/releases)** ← Click here!
 
+**Quick Download Guide:**
+
+- **Windows users** → download `RouteRush Island Setup 1.0.0.exe`
+- **Linux users** → download `RouteRush Island-1.0.0.AppImage`
+- **macOS users (Intel)** → download `RouteRush Island-1.0.0.dmg`
+- **macOS users (Apple Silicon / M1/M2/M3)** → download `RouteRush Island-1.0.0-arm64.dmg`
+
+---
+
 **Step-by-Step:**
 
 1. **Visit the Releases page**: Go to https://github.com/VedantKarne/routerush-island/releases
 2. **Find the latest version**: Look for the most recent release (e.g., v1.0.0)
-3. **Download for your platform**:
-   - **Windows**: `RouteRush-Island-Setup-1.0.0.exe` (Click to download)
-   - **macOS**: `RouteRush-Island-1.0.0.dmg` (Click to download)
-   - **Linux**: `RouteRush-Island-1.0.0.AppImage` (Click to download)
+3. **Download the right file** for your platform (see Quick Download Guide above)
 4. **Install**:
    - **Windows**: Double-click the `.exe` file and follow the installer
    - **macOS**: Open the `.dmg` file and drag to Applications folder
    - **Linux**: Make the `.AppImage` executable (`chmod +x RouteRush-Island-1.0.0.AppImage`) and run it
 5. **Launch**: Find **RouteRush Island** in your applications menu and start exploring!
 
-> **Note**: No extraction needed! Just download and run the installer for your platform.
+> **Note**: No extraction or zip files! Just download the installer for your platform and run it.
 
 ### Option 2 – Build from Source (For Developers)
 
