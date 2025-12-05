@@ -15,7 +15,7 @@ If you just want to **use the app** (and not build from source), download a read
   - Dijkstra's Algorithm
   - Bidirectional Dijkstra
   - Bellman-Ford Algorithm
-  - Bellman-Ford Multi-Source Shortest Path (BMSSP*-inspired visualization)
+  - BMSSP-inspired shortest-path visualization (bounded multi-source shortest paths)*
 - **Dynamic Scenarios**:
   - Normal traffic simulation
   - Emergency routing
@@ -172,7 +172,7 @@ Single-source shortest path that handles negative weights and detects negative c
 
 **Complexity**: O(V × E)
 
-### Bellman-Ford MSSP / BMSSP*-Inspired Visualization
+### BMSSP-Inspired Shortest-Path Visualization (Bounded Multi-Source Shortest Paths)*
 
 A multi-source style shortest-path visualization inspired by Bellman-Ford–based frontier shrinking and bounded searches, adapted here for educational, single-source/single-destination interactive use.
 
