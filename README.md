@@ -1,5 +1,10 @@
 # 🗺️ RouteRush Island – Gamified Pathfinding Simulator
 
+![Release](https://img.shields.io/github/v/release/VedantKarne/routerush-island)
+![Downloads](https://img.shields.io/github/downloads/VedantKarne/routerush-island/total)
+![License](https://img.shields.io/github/license/VedantKarne/routerush-island)
+![Build Status](https://img.shields.io/github/actions/workflow/status/VedantKarne/routerush-island/build.yml)
+
 A gamified traffic algorithm simulator desktop application built with Electron and HTML5 Canvas. Visualize and compare different pathfinding algorithms in real-time on a tropical island environment.
 
 ![RouteRush Island Preview](.github/images/preview.png)
@@ -10,25 +15,55 @@ If you just want to **use the app** (and not build from source), download a read
 
 ---
 
+## Table of Contents
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+  - [Download & Run (Recommended)](#option-1--download--run-recommended-for-users)
+  - [Build from Source](#option-2--build-from-source-for-developers)
+- [Project Structure](#-project-structure)
+- [How to Use](#-how-to-use)
+- [Technologies Used](#️-technologies-used)
+- [Algorithms Implemented](#-algorithms-implemented)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Keywords](#-keywords)
+- [Technical Disclaimer](#️-technical-disclaimer)
+
+---
+
 ## ✨ Features
 
+### 🌍 Map Features
 - **Interactive Island Map**: Explore a tropical island with roads, buildings, and traffic networks
+- **Pan & Zoom**: Click and drag the map, use zoom controls or mouse wheel
+- **Dynamic Incident Placement**: Place accidents or construction zones on roads
+
+### 🧠 Algorithm Features
 - **Multiple Algorithms**: Compare pathfinding algorithms side-by-side:
-  - Dijkstra's Algorithm
-  - Bidirectional Dijkstra
-  - Bellman-Ford Algorithm
+  - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+  - [Bidirectional Dijkstra](https://en.wikipedia.org/wiki/Bidirectional_search)
+  - [Bellman-Ford Algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
   - BMSSP-inspired shortest-path visualization (bounded multi-source shortest paths)*
+- **Real-time Visualization**: Watch algorithms solve paths in real-time with color-coded visualizations
+- **Performance Metrics**: Track and compare algorithm performance metrics
+
+### 🎮 Simulation Features
 - **Dynamic Scenarios**:
   - Normal traffic simulation
   - Emergency routing
   - Accident/construction incident management
   - Random scenario generation
-- **Real-time Visualization**: Watch algorithms solve paths in real-time with color-coded visualizations
-- **Performance Metrics**: Track and compare algorithm performance metrics
-- **Interactive Controls**: Pan, zoom, and interact with the map using intuitive controls
-- **Sound Effects**: Immersive audio feedback powered by Tone.js
+- **Point Selection**: Click on locations to set source/destination
 
-(\* See **Technical Disclaimer** at the end.)
+### 🛠 Interaction Features
+- **Interactive Controls**: Pan, zoom, and interact with the map using intuitive controls
+- **Scenario Selection**: Choose from normal traffic, emergency, or incident scenarios
+- **Algorithm Comparison**: Pick one or more algorithms to visualize and compare
+
+### 🔊 Audio Features
+- **Immersive Sound Effects**: Audio feedback powered by Tone.js
+
+(*See **Technical Disclaimer** at the end.)
 
 ---
 
@@ -90,6 +125,8 @@ This will launch the application in development mode with DevTools enabled.
 
 #### Building the Application
 
+The build process includes minification of HTML, CSS, and JavaScript, followed by packaging with Electron Builder to create platform-specific installers (NSIS for Windows, DMG for macOS, AppImage for Linux).
+
 ##### Build for all platforms
 
 ```bash
@@ -135,8 +172,7 @@ traffic-simulator-desktop/
 4. **Run Simulation**: Click "Find Best Route" to visualize the pathfinding process
 5. **Analyze Results**: Review performance metrics and compare algorithm efficiency
 
-### Controls
-
+**Controls:**
 - **Pan**: Click and drag the map
 - **Zoom**: Use the zoom controls or mouse wheel
 - **Point Selection**: Click on locations to set source/destination
@@ -168,34 +204,23 @@ Runs Dijkstra from both source and target simultaneously, meeting in the middle 
 
 **Complexity**: O((V + E) log V) with reduced constant factors
 
-### Bellman-Ford
+### Bellman-Ford Algorithm
 
 Single-source shortest path that handles negative weights and detects negative cycles.
 
 **Complexity**: O(V × E)
 
-### BMSSP-Inspired Shortest-Path Visualization (Bounded Multi-Source Shortest Paths)*
+### BMSSP-Inspired Shortest-Path Visualization*
 
-A multi-source style shortest-path visualization inspired by Bellman-Ford–based frontier shrinking and bounded searches, adapted here for educational, single-source/single-destination interactive use.
+A visualization inspired by the Bounded Multi-Source Shortest Paths algorithm, adapted for educational single-source/single-destination scenarios.
 
-This implementation conceptually includes:
-
-- Recursive exploration with a `computeRecursive`-style routine
-- Source-set shrinking using Bellman-Ford–like relaxations
+This implementation includes:
+- Recursive exploration with frontier shrinking
+- Bellman-Ford-style relaxations
 - Pivot selection from the current frontier
-- Bounded Dijkstra (`miniDijkstra`-style) within a distance threshold
+- Bounded Dijkstra within distance thresholds
 
-(\* See **Technical Disclaimer** below for details and limitations.)
-
----
-
-## 📦 Building from Source
-
-The build process includes:
-
-1. **Minification**: HTML, CSS, and JavaScript are minified
-2. **Packaging**: Electron Builder packages the app for the target platform
-3. **Installer Creation**: Platform-specific installers are generated (NSIS for Windows, DMG for macOS, AppImage for Linux)
+*See **Technical Disclaimer** below for important details and limitations.
 
 ---
 
@@ -231,11 +256,18 @@ For questions or support, please open an issue on GitHub.
 
 ---
 
-## ⚠️ Technical Disclaimer (BMSSP Implementation)*
+## 🔍 Keywords
+
+Pathfinding • Dijkstra • Bellman-Ford • Visualization • Electron • Desktop App • BMSSP • Algorithm Simulator • Traffic Simulation • Shortest Path • Graph Algorithms • Educational Tool
+
+---
+
+<details>
+<summary><h2>⚠️ Technical Disclaimer</h2></summary>
 
 RouteRush Island is an **educational visualization and experimentation tool** for shortest-path algorithms.
 
-The BMSSP-related functionality in this project is a **didactic implementation inspired by the BMSSP (Bounded Multi-Source Shortest Paths) algorithm** and its recursive divide-and-conquer structure (source shrinking via Bellman-Ford–style relaxations, pivot selection, and bounded Dijkstra-style searches), as described in the underlying research.
+The BMSSP-related functionality in this project is a **didactic implementation inspired by the BMSSP (Bounded Multi-Source Shortest Paths) algorithm** and its recursive divide-and-conquer structure (source shrinking via Bellman-Ford-style relaxations, pivot selection, and bounded Dijkstra-style searches), as described in the underlying research.
 
 In particular, this implementation:
 
@@ -250,7 +282,9 @@ It **does not**:
 
 This project **must not** be interpreted as a production-grade or faithful reimplementation of the BMSSP research algorithm. It is an **educational visualization tool** intended to support learning and intuition-building, not to serve as a reference implementation for research comparisons or benchmarking.
 
-(\*) References to **BMSSP** or "BMSSP-inspired" behavior in this repository should be understood in this educational, non-production sense.
+References to **BMSSP** or "BMSSP-inspired" behavior in this repository should be understood in this educational, non-production sense.
+
+</details>
 
 ---
 
