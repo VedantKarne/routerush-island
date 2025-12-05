@@ -125,8 +125,11 @@ release/
 dist/
 out/
 
-# Build directory
+# Build directory (but keep icon files for GitHub Actions)
 build/
+!build/*.png
+!build/*.ico
+!build/*.icns
 
 # macOS files
 .DS_Store
