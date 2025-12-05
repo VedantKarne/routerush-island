@@ -93,7 +93,9 @@ RouteRush Island isn't just another algorithm visualizer—it's an **immersive l
 
 ## 🌟 The Story Behind RouteRush Island
 
-RouteRush Island started as a DSA mini-project but evolved into something much more immersive. Instead of submitting just another console application, I built an interactive tropical island where algorithms come to life. [Read the full journey →](https://medium.com/@vedantkarne15/%EF%B8%8F-building-routerush-island-how-i-turned-textbook-dsa-into-a-gamified-pathfinding-simulator-b3da8f279064)  
+RouteRush Island started as a DSA mini-project but evolved into something much more immersive. Instead of submitting just another console application, I built an interactive tropical island where algorithms come to life. 
+
+[Read the full journey →](https://medium.com/@vedantkarne15/%EF%B8%8F-building-routerush-island-how-i-turned-textbook-dsa-into-a-gamified-pathfinding-simulator-b3da8f279064)  
 
 ---
 
