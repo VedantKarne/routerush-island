@@ -118,7 +118,7 @@ RouteRush Island implements four pathfinding algorithms, each with unique streng
 | **Dijkstra** | Fast | ❌ No | General shortest path |
 | **Bidirectional** | Faster | ❌ No | Point-to-point queries |
 | **Bellman-Ford** | Slower | ✅ Yes | Negative weights |
-| **BMSSP-Inspired** | Varies | Educational | Learning concepts |
+| **BMSSP-Inspired** | Fastest | Educational | Learning concepts |
 
 📖 **[Read detailed algorithm explanations →](docs/algorithms.md)**
 
