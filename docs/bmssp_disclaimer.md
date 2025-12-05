@@ -1,124 +1,94 @@
-# ⚠️ Technical Disclaimer - BMSSP Implementation
+# ⚠️ Technical Disclaimer — BMSSP Performance Simulator (Not an Implementation)
 
 ## Overview
 
-RouteRush Island is an **educational visualization and experimentation tool** for shortest-path algorithms.
+RouteRush Island includes a mode labelled **"BMSSP-Inspired Simulation."**
+This feature exists **only as an educational performance/behavior simulator** and **does not implement** the BMSSP algorithm.
 
-The BMSSP-related functionality in this project is a **didactic implementation inspired by the BMSSP (Bounded Multi-Source Shortest Paths) algorithm** and its recursive divide-and-conquer structure, as described in the underlying research.
-
----
-
-## What This Implementation Includes
-
-This implementation is inspired by BMSSP concepts and includes:
-
-✅ **Recursive exploration** with frontier shrinking  
-✅ **Source-set shrinking** using Bellman-Ford-style relaxations  
-✅ **Pivot selection** from the current frontier  
-✅ **Bounded Dijkstra** searches within distance thresholds  
-✅ **Interactive visualization** for educational purposes  
+BMSSP (Bounded Multi-Source Shortest Paths), as introduced in the research literature (Duan et al., 2025), is a real algorithm with formal structural components and asymptotic complexity guarantees.
+**This project does not attempt to reproduce those mechanisms.**
 
 ---
 
-## What This Implementation Is
+## What the BMSSP Mode Actually Does
 
-- ✅ An **educational visualization tool** for learning pathfinding concepts
-- ✅ Designed for **interactive, single-source/single-destination** scenarios
-- ✅ Focused on **small-scale experiments** and intuition-building
-- ✅ A way to understand ideas like **source-set shrinking** and **bounded searches**
-- ✅ A **demonstration** of recursive algorithm design patterns
+The BMSSP mode in RouteRush Island:
 
----
+* Uses **Bidirectional Dijkstra** for finding the real shortest path
+* Collects timing/performance values from this execution
+* **Simulates BMSSP-like timing curves** for educational comparison
+* Provides visualization of **frontier shrinking**, **pivots**, and **bounded-search behavior** in a simplified, conceptual way
 
-## What This Implementation Is NOT
-
-- ❌ A **production-grade** implementation of the BMSSP research algorithm
-- ❌ A **full batch multi-source shortest-path** solver as formally defined in BMSSP
-- ❌ Designed to achieve the **theoretical O(m log^(2/3) n) complexity** guarantees
-- ❌ A **reference implementation** for research comparisons or benchmarking
-- ❌ Optimized with all **low-level engineering details** and parameter tuning required for large-scale workloads
+It is essentially a **didactic performance simulator**, not an algorithmic implementation.
 
 ---
 
-## Educational Context
+## What the BMSSP Research Algorithm Actually Includes (Not Implemented Here)
 
-### Purpose
+The real BMSSP algorithm involves:
 
-This project aims to:
+* **Recursive frontier reduction and partitioning**
+* **Pivot selection with bounded Dijkstra expansion**
+* **Batch multi-source shortest-path query handling**
+* A provable **O(m log^(2/3) n)** time complexity
+* Specialized data structures and engineering not present here
 
-1. **Build intuition** about advanced pathfinding concepts
-2. **Visualize** how recursive shortest-path algorithms work
-3. **Compare** different algorithmic approaches side-by-side
-4. **Demonstrate** the interplay between different algorithm components
-
-### Target Audience
-
-- Students learning about graph algorithms
-- Developers exploring pathfinding techniques
-- Educators teaching algorithm design
-- Anyone curious about shortest-path visualization
+None of these components are implemented in RouteRush Island.
 
 ---
 
-## Important Notes
+## What This BMSSP Mode *Is*
 
-### For Students and Learners
-
-This implementation is a great starting point to understand:
-- How multi-source concepts differ from single-source algorithms
-- The role of frontier shrinking in optimization
-- How recursive approaches decompose complex problems
-- The trade-offs between different pathfinding strategies
-
-### For Researchers
-
-This implementation **should not** be used for:
-- Performance benchmarking against BMSSP research
-- Validating theoretical complexity claims
-- Production deployment in large-scale systems
-- Academic comparisons requiring faithful algorithm reproduction
+* A **teaching and intuition-building tool**
+* A **conceptual simulator** that visualizes high-level ideas
+* Designed for **single-source, single-destination** interaction
+* Suitable for **students**, **educators**, and **algorithm enthusiasts**
+* A way to explore how concepts like frontier shrinking and bounded searching *might* look in practice
 
 ---
 
-## References and Further Reading
+## What This BMSSP Mode *Is NOT*
 
-### Original BMSSP Research
+This mode does **NOT**:
 
-For the formal BMSSP algorithm and its theoretical guarantees, please refer to the original research literature on Bounded Multi-Source Shortest Paths.
+* Implement the real BMSSP algorithm
+* Reproduce BMSSP's recursive structure or multi-source batching
+* Achieve BMSSP's theoretical complexity bounds
+* Serve as a **reference**, **benchmark**, or **research implementation**
+* Perform genuine BMSSP optimizations or engineering techniques
 
-### Related Algorithms
-
-- **Dijkstra's Algorithm**: Classic single-source shortest path
-- **Bellman-Ford Algorithm**: Handles negative weights
-- **A* Search**: Heuristic-guided pathfinding
-- **Floyd-Warshall**: All-pairs shortest paths
-
----
-
-## Terminology Clarification
-
-When we refer to **"BMSSP-inspired"** behavior in this repository, we mean:
-
-- The implementation draws **conceptual inspiration** from BMSSP ideas
-- It is **adapted and simplified** for educational single-source scenarios
-- It is **not a faithful reproduction** of the research algorithm
-- It serves as a **teaching tool**, not a production implementation
+It should not be used for academic evaluation or comparison.
 
 ---
 
-## Disclaimer Summary
+## Why This Disclaimer Exists
 
-> **This project is an educational visualization tool inspired by BMSSP concepts, adapted for interactive single-source pathfinding scenarios. It is not a production-grade or research-faithful implementation of the BMSSP algorithm.**
+This disclaimer protects:
+
+* **You (the project author)** — from overclaiming or accidental misrepresentation
+* **The BMSSP authors** — whose research must not be diluted or incorrectly attributed
+* **Students and developers** — so they do not mistake the simulator for the real algorithm
+* **Future readers** — who deserve technical accuracy and honest expectations
+
+Maintaining this clarity is essential, especially when referencing an algorithm with real theoretical guarantees.
 
 ---
 
-## Questions or Clarifications
+## Summary (Important)
 
-If you have questions about:
-- **The educational aspects** of this implementation → Open an issue on GitHub
-- **The original BMSSP research** → Refer to the academic literature
-- **Using this for learning** → Feel free to explore and experiment!
-- **Using this for research** → Please use the original BMSSP implementation instead
+> **RouteRush Island does not implement BMSSP. It implements Bidirectional Dijkstra for actual routing and displays a simplified, conceptual, performance-inspired simulation for educational purposes only.**
+
+---
+
+## Further Reading
+
+For the real BMSSP algorithm, its structure, guarantees, and batch-query design, please refer to the original academic papers by Duan et al. (2025).
+
+For classical shortest-path algorithms actually implemented in this project:
+
+* Dijkstra
+* Bidirectional Dijkstra
+* Bellman–Ford
 
 ---
 
