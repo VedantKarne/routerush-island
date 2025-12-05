@@ -1,232 +1,199 @@
 # 🗺️ RouteRush Island – Gamified Pathfinding Simulator
 
-![Release](https://img.shields.io/github/v/release/VedantKarne/routerush-island)
-![Downloads](https://img.shields.io/github/downloads/VedantKarne/routerush-island/total)
-![License](https://img.shields.io/github/license/VedantKarne/routerush-island)
-![Build Status](https://img.shields.io/github/actions/workflow/status/VedantKarne/routerush-island/build.yml)
+[![Release](https://img.shields.io/github/v/release/VedantKarne/routerush-island)](https://github.com/VedantKarne/routerush-island/releases)
+[![Downloads](https://img.shields.io/github/downloads/VedantKarne/routerush-island/total.svg)](https://github.com/VedantKarne/routerush-island/releases)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)]()
 
-A gamified traffic algorithm simulator desktop application built with Electron and HTML5 Canvas. Visualize and compare different pathfinding algorithms in real-time on a tropical island environment.
+A beautiful, gamified desktop application for visualizing and comparing pathfinding algorithms in real-time on an interactive tropical island.
 
 ![RouteRush Island Preview](.github/images/preview.png)
 
-If you just want to **use the app** (and not build from source), download a ready-made installer from the **[Releases](https://github.com/VedantKarne/routerush-island/releases)** page on GitHub.
+---
 
-> **Note**: This project is an educational visualization tool. See the **Technical Disclaimer** at the end of this document for important details about the BMSSP implementation.
+## 📥 Quick Start
+
+**Download the latest release:**  
+👉 **[Windows](https://github.com/VedantKarne/routerush-island/releases)** • **[macOS](https://github.com/VedantKarne/routerush-island/releases)** • **[Linux](https://github.com/VedantKarne/routerush-island/releases)**
+
+No installation complexity—just download and run!
 
 ---
 
 ## Table of Contents
 - [Features](#-features)
-- [Getting Started](#-getting-started)
-  - [Download & Run (Recommended)](#option-1--download--run-recommended-for-users)
-  - [Build from Source](#option-2--build-from-source-for-developers)
-- [Project Structure](#-project-structure)
-- [How to Use](#-how-to-use)
-- [Technologies Used](#️-technologies-used)
-- [Algorithms Implemented](#-algorithms-implemented)
+- [What Makes This Special](#-what-makes-this-special)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Algorithms](#-algorithms)
+- [For Developers](#-for-developers)
 - [Contributing](#-contributing)
 - [License](#-license)
-- [Keywords](#-keywords)
-- [Technical Disclaimer](#️-technical-disclaimer)
 
 ---
 
 ## ✨ Features
 
-### 🌍 Map Features
-- **Interactive Island Map**: Explore a tropical island with roads, buildings, and traffic networks
-- **Pan & Zoom**: Click and drag the map, use zoom controls or mouse wheel
-- **Dynamic Incident Placement**: Place accidents or construction zones on roads
+### 🌍 Interactive Tropical Island
+- Pan, zoom, and explore a beautifully rendered map
+- Click to set source and destination points
+- Place dynamic obstacles (accidents, construction zones)
 
-### 🧠 Algorithm Features
-- **Multiple Algorithms**: Compare pathfinding algorithms side-by-side:
-  - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-  - [Bidirectional Dijkstra](https://en.wikipedia.org/wiki/Bidirectional_search)
-  - [Bellman-Ford Algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
-  - BMSSP-inspired shortest-path visualization (bounded multi-source shortest paths)*
-- **Real-time Visualization**: Watch algorithms solve paths in real-time with color-coded visualizations
-- **Performance Metrics**: Track and compare algorithm performance metrics
+### 🧠 Compare Algorithms Side-by-Side
+Visualize and compare performance of:
+- **[Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)** - Classic shortest path
+- **[Bidirectional Dijkstra](https://en.wikipedia.org/wiki/Bidirectional_search)** - Faster point-to-point search
+- **[Bellman-Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)** - Handles negative weights
+- **BMSSP-Inspired** - Educational multi-source visualization*
 
-### 🎮 Simulation Features
-- **Dynamic Scenarios**:
-  - Normal traffic simulation
-  - Emergency routing
-  - Accident/construction incident management
-  - Random scenario generation
-- **Point Selection**: Click on locations to set source/destination
+### 🎮 Dynamic Scenarios
+- **Normal Traffic**: Standard pathfinding
+- **Emergency Routing**: Priority routes
+- **Incident Management**: Navigate around obstacles
+- **Random Generation**: Unpredictable challenges
 
-### 🛠 Interaction Features
-- **Interactive Controls**: Pan, zoom, and interact with the map using intuitive controls
-- **Scenario Selection**: Choose from normal traffic, emergency, or incident scenarios
-- **Algorithm Comparison**: Pick one or more algorithms to visualize and compare
+### 🎨 Rich Visual Experience
+- Real-time algorithm visualization with color-coded paths
+- Performance metrics and comparison charts
+- Smooth animations and transitions
+- Immersive sound effects powered by Tone.js
 
-### 🔊 Audio Features
-- **Immersive Sound Effects**: Audio feedback powered by Tone.js
-
-(*See **Technical Disclaimer** at the end.)
+*[Learn more about our BMSSP implementation](docs/bmssp_disclaimer.md)
 
 ---
 
-## 🚀 Getting Started
+## 🎯 What Makes This Special
 
-### Option 1 – Download & Run (Recommended for Users)
+RouteRush Island isn't just another algorithm visualizer—it's an **immersive learning experience** that makes complex computer science concepts tangible and fun.
 
-> **📥 Download Link**: **[GitHub Releases](https://github.com/VedantKarne/routerush-island/releases)** ← Click here!
-
-**Quick Download Guide:**
-
-- **Windows users** → download `RouteRush Island Setup 1.0.0.exe`
-- **Linux users** → download `RouteRush Island-1.0.0.AppImage`
-- **macOS users (Intel)** → download `RouteRush Island-1.0.0.dmg`
-- **macOS users (Apple Silicon / M1/M2/M3)** → download `RouteRush Island-1.0.0-arm64.dmg`
+✅ **Educational** - Perfect for students learning graph algorithms  
+✅ **Visual** - See exactly how each algorithm explores the graph  
+✅ **Comparative** - Run multiple algorithms simultaneously  
+✅ **Interactive** - Experiment with different scenarios instantly  
+✅ **Beautiful** - Modern design with glassmorphism and tropical aesthetics  
 
 ---
 
-**Step-by-Step:**
+## 📦 Installation
 
-1. **Visit the Releases page**: Go to https://github.com/VedantKarne/routerush-island/releases
-2. **Find the latest version**: Look for the most recent release (e.g., v1.0.0)
-3. **Download the right file** for your platform (see Quick Download Guide above)
-4. **Install**:
-   - **Windows**: Double-click the `.exe` file and follow the installer
-   - **macOS**: Open the `.dmg` file and drag to Applications folder
-   - **Linux**: Make the `.AppImage` executable (`chmod +x RouteRush-Island-1.0.0.AppImage`) and run it
-5. **Launch**: Find **RouteRush Island** in your applications menu and start exploring!
+### For Users (Recommended)
 
-> **Note**: No extraction or zip files! Just download the installer for your platform and run it.
+**Download the installer for your platform:**
 
-### Option 2 – Build from Source (For Developers)
+| Platform | Download | Instructions |
+|----------|----------|--------------|
+| 🪟 **Windows** | [RouteRush Island Setup.exe](https://github.com/VedantKarne/routerush-island/releases) | Double-click and follow installer |
+| 🍎 **macOS (Intel)** | [RouteRush Island.dmg](https://github.com/VedantKarne/routerush-island/releases) | Open and drag to Applications |
+| 🍎 **macOS (Apple Silicon)** | [RouteRush Island-arm64.dmg](https://github.com/VedantKarne/routerush-island/releases) | Open and drag to Applications |
+| 🐧 **Linux** | [RouteRush Island.AppImage](https://github.com/VedantKarne/routerush-island/releases) | `chmod +x` and run |
 
-#### Prerequisites
+### For Developers
 
+See [Developer Guide](#-for-developers) below.
+
+---
+
+## 🎮 Usage
+
+1. **Launch the application** from your applications menu
+2. **Click on the map** to set your source (start) point
+3. **Click again** to set your destination (end) point
+4. **Choose a scenario** (Normal, Emergency, or Incident)
+5. **Select algorithms** to compare
+6. **Click "Find Best Route"** and watch the magic happen!
+
+**Pro Tips:**
+- 🖱️ Click and drag to pan the map
+- 🔍 Use mouse wheel or zoom controls to zoom
+- 🚧 Switch to Incident mode to place obstacles
+- 📊 Compare performance metrics in real-time
+
+---
+
+## 🎨 Algorithms
+
+RouteRush Island implements four pathfinding algorithms, each with unique strengths:
+
+| Algorithm | Speed | Handles Negatives | Best For |
+|-----------|-------|-------------------|----------|
+| **Dijkstra** | Fast | ❌ No | General shortest path |
+| **Bidirectional** | Faster | ❌ No | Point-to-point queries |
+| **Bellman-Ford** | Slower | ✅ Yes | Negative weights |
+| **BMSSP-Inspired** | Varies | Educational | Learning concepts |
+
+📖 **[Read detailed algorithm explanations →](docs/algorithms.md)**
+
+---
+
+## 🛠️ For Developers
+
+### Build from Source
+
+**Prerequisites:**
 - Node.js (v14 or higher)
 - npm or yarn
 
-#### Installation
-
-1. Clone the repository:
+**Quick Start:**
 ```bash
+# Clone the repository
 git clone https://github.com/VedantKarne/routerush-island.git
 cd routerush-island
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-#### Running the Application (Development Mode)
-
-```bash
+# Run in development mode
 npm start
 ```
 
-This will launch the application in development mode with DevTools enabled.
-
-#### Building the Application
-
-The build process includes minification of HTML, CSS, and JavaScript, followed by packaging with Electron Builder to create platform-specific installers (NSIS for Windows, DMG for macOS, AppImage for Linux).
-
-##### Build for all platforms
+### Build for Production
 
 ```bash
+# Build for all platforms
 npm run build
-```
 
-##### Platform-specific builds
-
-```bash
+# Or build for specific platform
 npm run build:win    # Windows
 npm run build:mac    # macOS
 npm run build:linux  # Linux
 ```
 
-Built installers will be available in the `release/` folder (local directory, not on GitHub).
+Built installers will be in the `release/` directory.
 
----
-
-## 📁 Project Structure
+### Project Structure
 
 ```text
 traffic-simulator-desktop/
-├── src/                               # Source files
-│   ├── Gamified_Traffic_Simulator_Premium.html  # Main application file
-│   └── add_dynamic_effects.ps1        # Build helper script
-├── dist/                              # Minified/production files
-├── release/                           # Built installers (local builds only, excluded from Git)
-├── build/                             # Build assets (icons)
-├── build-scripts/                     # Build scripts
-│   └── minify.js                      # HTML/CSS/JS minification
-├── main.js                            # Electron main process
-├── package.json                       # Node.js dependencies and scripts
-└── README.md                          # This file
+├── src/           # Source code
+├── docs/          # Documentation
+├── dist/          # Production build
+├── build/         # Build assets
+└── main.js        # Electron entry point
 ```
 
----
+📖 **[View detailed project structure →](docs/project_structure.md)**
 
-## 🎮 How to Use
+### Tech Stack
 
-1. **Select Points**: Choose source and destination points on the island map
-2. **Choose Scenario**: Select from normal traffic, emergency, or incident scenarios
-3. **Select Algorithms**: Pick one or more algorithms to compare
-4. **Run Simulation**: Click "Find Best Route" to visualize the pathfinding process
-5. **Analyze Results**: Review performance metrics and compare algorithm efficiency
-
-**Controls:**
-- **Pan**: Click and drag the map
-- **Zoom**: Use the zoom controls or mouse wheel
-- **Point Selection**: Click on locations to set source/destination
-- **Incident Mode**: Place accidents or construction zones on roads
-
----
-
-## 🛠️ Technologies Used
-
-- **Electron**: Desktop application framework
-- **HTML5 Canvas**: For rendering the interactive map
-- **Tone.js**: Audio synthesis and sound effects
-- **Electron Builder**: Application packaging and distribution
-- **HTML Minifier**: Code size optimization for HTML/CSS/JS
-
----
-
-## 🎨 Algorithms Implemented
-
-### Dijkstra's Algorithm
-
-Single-source shortest path algorithm using a priority queue. Optimal for non-negative weighted graphs.
-
-**Complexity**: O((V + E) log V)
-
-### Bidirectional Dijkstra
-
-Runs Dijkstra from both source and target simultaneously, meeting in the middle for faster results.
-
-**Complexity**: O((V + E) log V) with reduced constant factors
-
-### Bellman-Ford Algorithm
-
-Single-source shortest path that handles negative weights and detects negative cycles.
-
-**Complexity**: O(V × E)
-
-### BMSSP-Inspired Shortest-Path Visualization*
-
-A visualization inspired by the Bounded Multi-Source Shortest Paths algorithm, adapted for educational single-source/single-destination scenarios.
-
-This implementation includes:
-- Recursive exploration with frontier shrinking
-- Bellman-Ford-style relaxations
-- Pivot selection from the current frontier
-- Bounded Dijkstra within distance thresholds
-
-*See **Technical Disclaimer** below for important details and limitations.
+- **[Electron](https://www.electronjs.org/)** - Desktop framework
+- **HTML5 Canvas** - Map rendering
+- **[Tone.js](https://tonejs.github.io/)** - Audio synthesis
+- **[Electron Builder](https://www.electron.build/)** - App packaging
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Whether it's:
+
+- 🐛 Bug fixes
+- ✨ New features
+- 📝 Documentation improvements
+- 🎨 UI/UX enhancements
+
+**Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a PR.**
+
+### Quick Contribution Steps
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -238,21 +205,23 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- Algorithm implementations inspired by classic computer science textbooks and research literature
-- Visual design inspired by modern web design trends
-- Island theme and tropical aesthetics for an engaging user experience
+- Algorithm implementations inspired by classic CS textbooks
+- Visual design inspired by modern web aesthetics
+- Tropical theme for an engaging learning experience
 
 ---
 
-## 📧 Contact
+## 📧 Support
 
-For questions or support, please open an issue on GitHub.
+- 🐛 **Found a bug?** [Open an issue](https://github.com/VedantKarne/routerush-island/issues/new?template=bug_report.md)
+- 💡 **Have an idea?** [Request a feature](https://github.com/VedantKarne/routerush-island/issues/new?template=feature_request.md)
+- 💬 **Questions?** [Start a discussion](https://github.com/VedantKarne/routerush-island/discussions)
 
 ---
 
@@ -262,30 +231,10 @@ Pathfinding • Dijkstra • Bellman-Ford • Visualization • Electron • Des
 
 ---
 
-<details>
-<summary><h2>⚠️ Technical Disclaimer</h2></summary>
-
-RouteRush Island is an **educational visualization and experimentation tool** for shortest-path algorithms.
-
-The BMSSP-related functionality in this project is a **didactic implementation inspired by the BMSSP (Bounded Multi-Source Shortest Paths) algorithm** and its recursive divide-and-conquer structure (source shrinking via Bellman-Ford-style relaxations, pivot selection, and bounded Dijkstra-style searches), as described in the underlying research.
-
-In particular, this implementation:
-
-- Is designed for **interactive, single-source/single-destination** scenarios and small-scale experiments
-- Focuses on helping users build intuition about ideas like source-set shrinking, recursive exploration, and bounded searches
-
-It **does not**:
-
-- Implement the full **batch multi-source shortest-path** setting for which BMSSP is formally defined
-- Target or realize the theoretical O(m log^(2/3) n) complexity guarantees of the original algorithm
-- Replicate all low-level engineering details, parameter tuning, or optimizations required for large-scale batch processing workloads
-
-This project **must not** be interpreted as a production-grade or faithful reimplementation of the BMSSP research algorithm. It is an **educational visualization tool** intended to support learning and intuition-building, not to serve as a reference implementation for research comparisons or benchmarking.
-
-References to **BMSSP** or "BMSSP-inspired" behavior in this repository should be understood in this educational, non-production sense.
-
-</details>
-
----
+<div align="center">
 
 **Enjoy exploring pathfinding algorithms with RouteRush Island!** 🏝️🚗
+
+[Download Now](https://github.com/VedantKarne/routerush-island/releases) • [View Documentation](docs/) • [Report Issue](https://github.com/VedantKarne/routerush-island/issues)
+
+</div>
