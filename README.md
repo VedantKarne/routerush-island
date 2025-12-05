@@ -88,7 +88,7 @@ RouteRush Island isn't just another algorithm visualizer—it's an **immersive l
 
 ### For Developers
 
-See [Developer Guide](#-for-developers) below.
+See [Developer Guide](#️-for-developers) below.
 
 ---
 
