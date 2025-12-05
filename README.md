@@ -2,7 +2,7 @@
 
 A gamified traffic algorithm simulator desktop application built with Electron and HTML5 Canvas. Visualize and compare different pathfinding algorithms in real-time on a tropical island environment.
 
-If you just want to **use the app** (and not build from source), you can download a ready-made installer from the **Releases** section on GitHub or from the `release/` folder if you have the repository locally.
+If you just want to **use the app** (and not build from source), download a ready-made installer from the **[Releases](https://github.com/VedantKarne/routerush-island/releases)** page on GitHub.
 
 > **Note**: This project is an educational visualization tool. See the **Technical Disclaimer** at the end of this document for important details about the BMSSP implementation.
 
@@ -34,13 +34,23 @@ If you just want to **use the app** (and not build from source), you can downloa
 
 ### Option 1 – Download & Run (Recommended for Users)
 
-1. Go to the repository's **Releases** page on GitHub.
-2. Download the installer for your platform from the attached assets (or from the `release/` folder if you have the repo locally):
-   - **Windows**: `.exe` installer
-   - **macOS**: `.dmg` or `.zip`
-   - **Linux**: `.AppImage` or `.deb`
-3. Run the downloaded file and follow the installer steps.
-4. Launch **RouteRush Island** from your applications menu and enjoy exploring the island!
+> **📥 Download Link**: **[GitHub Releases](https://github.com/VedantKarne/routerush-island/releases)** ← Click here!
+
+**Step-by-Step:**
+
+1. **Visit the Releases page**: Go to https://github.com/VedantKarne/routerush-island/releases
+2. **Find the latest version**: Look for the most recent release (e.g., v1.0.0)
+3. **Download for your platform**:
+   - **Windows**: `RouteRush-Island-Setup-1.0.0.exe` (Click to download)
+   - **macOS**: `RouteRush-Island-1.0.0.dmg` (Click to download)
+   - **Linux**: `RouteRush-Island-1.0.0.AppImage` (Click to download)
+4. **Install**:
+   - **Windows**: Double-click the `.exe` file and follow the installer
+   - **macOS**: Open the `.dmg` file and drag to Applications folder
+   - **Linux**: Make the `.AppImage` executable (`chmod +x RouteRush-Island-1.0.0.AppImage`) and run it
+5. **Launch**: Find **RouteRush Island** in your applications menu and start exploring!
+
+> **Note**: No extraction needed! Just download and run the installer for your platform.
 
 ### Option 2 – Build from Source (For Developers)
 
@@ -53,8 +63,8 @@ If you just want to **use the app** (and not build from source), you can downloa
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/traffic-simulator-desktop.git
-cd traffic-simulator-desktop
+git clone https://github.com/VedantKarne/routerush-island.git
+cd routerush-island
 ```
 
 2. Install dependencies:
@@ -86,7 +96,7 @@ npm run build:mac    # macOS
 npm run build:linux  # Linux
 ```
 
-Built installers will be available in the `release/` folder.
+Built installers will be available in the `release/` folder (local directory, not on GitHub).
 
 ---
 
@@ -98,7 +108,7 @@ traffic-simulator-desktop/
 │   ├── Gamified_Traffic_Simulator_Premium.html  # Main application file
 │   └── add_dynamic_effects.ps1        # Build helper script
 ├── dist/                              # Minified/production files
-├── release/                           # Built installers (Windows/Mac/Linux)
+├── release/                           # Built installers (local builds only, excluded from Git)
 ├── build/                             # Build assets (icons)
 ├── build-scripts/                     # Build scripts
 │   └── minify.js                      # HTML/CSS/JS minification
