@@ -13,18 +13,22 @@ A beautiful, gamified desktop application for visualizing and comparing pathfind
 
 ## 📥 Quick Start
 
+**System Requirements:** Windows 10+, macOS 10.13+, or Linux (64-bit)
+
 **Download the latest release:**  
 👉 **[Windows](https://github.com/VedantKarne/routerush-island/releases)** • **[macOS](https://github.com/VedantKarne/routerush-island/releases)** • **[Linux](https://github.com/VedantKarne/routerush-island/releases)**
 
-No installation complexity—just download and run!
+🎯 **No installation complexity—just download and run!**
 
 ---
 
 ## Table of Contents
 - [Features](#-features)
 - [What Makes This Special](#-what-makes-this-special)
+- [The Story Behind RouteRush Island](#-the-story-behind-routerush-island)
 - [Installation](#-installation)
 - [Usage](#-usage)
+- [Keyboard Shortcuts](#️-keyboard-shortcuts)
 - [Algorithms](#-algorithms)
 - [For Developers](#-for-developers)
 - [Contributing](#-contributing)
@@ -44,7 +48,7 @@ Visualize and compare performance of:
 - **[Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)** - Classic shortest path
 - **[Bidirectional Dijkstra](https://en.wikipedia.org/wiki/Bidirectional_search)** - Faster point-to-point search
 - **[Bellman-Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)** - Handles negative weights
-- **BMSSP-Inspired** - Educational multi-source visualization*
+- **BMSSP-Inspired** - Educational multi-source visualization
 
 ### 🎮 Dynamic Scenarios
 - **Normal Traffic**: Standard pathfinding
@@ -58,7 +62,10 @@ Visualize and compare performance of:
 - Smooth animations and transitions
 - Immersive sound effects powered by Tone.js
 
-*[Learn more about our BMSSP implementation](docs/bmssp_disclaimer.md)
+### 🟡 BMSSP Performance Simulator
+
+> [!WARNING]
+> **Educational Disclaimer:** This is a performance simulator based on BMSSP concepts, not a full implementation of the research algorithm. [Learn more →](docs/bmssp_disclaimer.md)
 
 ---
 
@@ -70,7 +77,23 @@ RouteRush Island isn't just another algorithm visualizer—it's an **immersive l
 ✅ **Visual** - See exactly how each algorithm explores the graph  
 ✅ **Comparative** - Run multiple algorithms simultaneously  
 ✅ **Interactive** - Experiment with different scenarios instantly  
-✅ **Beautiful** - Modern design with glassmorphism and tropical aesthetics  
+✅ **Beautiful** - Modern design with glassmorphism and tropical aesthetics
+
+<div align="center">
+
+### 🚀 Ready to Explore?
+
+[![Download for Windows](https://img.shields.io/badge/Download-Windows-blue?style=for-the-badge&logo=windows)](https://github.com/VedantKarne/routerush-island/releases)
+[![Download for macOS](https://img.shields.io/badge/Download-macOS-black?style=for-the-badge&logo=apple)](https://github.com/VedantKarne/routerush-island/releases)
+[![Download for Linux](https://img.shields.io/badge/Download-Linux-yellow?style=for-the-badge&logo=linux)](https://github.com/VedantKarne/routerush-island/releases)
+
+</div>
+
+---
+
+## 🌟 The Story Behind RouteRush Island
+
+RouteRush Island started as a DSA mini-project but evolved into something much more immersive. Instead of submitting just another console application, I built an interactive tropical island where algorithms come to life. [Read the full journey →](https://medium.com/@vedantkarne15/%EF%B8%8F-building-routerush-island-how-i-turned-textbook-dsa-into-a-gamified-pathfinding-simulator-b3da8f279064)  
 
 ---
 
@@ -106,6 +129,14 @@ See [Developer Guide](#️-for-developers) below.
 - 🔍 Use mouse wheel or zoom controls to zoom
 - 🚧 Switch to Incident mode to place obstacles
 - 📊 Compare performance metrics in real-time
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+RouteRush Island includes comprehensive keyboard shortcuts for navigation, camera control, simulation management, route selection, and more.
+
+📖 **[View all shortcuts →](docs/shortcuts.md)**
 
 ---
 
@@ -174,10 +205,11 @@ traffic-simulator-desktop/
 
 ### Tech Stack
 
-- **[Electron](https://www.electronjs.org/)** - Desktop framework
-- **HTML5 Canvas** - Map rendering
-- **[Tone.js](https://tonejs.github.io/)** - Audio synthesis
-- **[Electron Builder](https://www.electron.build/)** - App packaging
+- **Desktop Framework:** [Electron](https://electronjs.org) v28.0
+- **Rendering:** HTML5 Canvas API
+- **Audio:** [Tone.js](https://tonejs.github.io) v15.0
+- **Build Tool:** [Electron Builder](https://electron.build)
+- **Language:** JavaScript (ES6+)
 
 ---
 
