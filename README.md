@@ -83,7 +83,6 @@ RouteRush Island isn't just another algorithm visualizer—it's an **immersive l
 | Platform | Download | Instructions |
 |----------|----------|--------------|
 | 🪟 **Windows** | [RouteRush Island Setup.exe](https://github.com/VedantKarne/routerush-island/releases) | Double-click and follow installer |
-| 🍎 **macOS (Intel)** | [RouteRush Island.dmg](https://github.com/VedantKarne/routerush-island/releases) | Open and drag to Applications |
 | 🍎 **macOS (Apple Silicon)** | [RouteRush Island-arm64.dmg](https://github.com/VedantKarne/routerush-island/releases) | Open and drag to Applications |
 | 🐧 **Linux** | [RouteRush Island.AppImage](https://github.com/VedantKarne/routerush-island/releases) | `chmod +x` and run |
 
