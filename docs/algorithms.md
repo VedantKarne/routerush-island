@@ -1,23 +1,24 @@
 # 🎨 Algorithms Implemented
 
-This document provides detailed information about the pathfinding algorithms implemented in RouteRush Island.
+This document describes the pathfinding algorithms implemented in RouteRush Island, along with the BMSSP-inspired performance simulator used for educational visualization.
 
 ---
 
 ## Dijkstra's Algorithm
 
-Single-source shortest path algorithm using a priority queue. Optimal for non-negative weighted graphs.
+Classic single-source shortest path algorithm for graphs with non-negative edge weights.
 
 **Time Complexity**: O((V + E) log V)
 
 **How it works**:
-1. Initialize distances from source to all vertices as infinite
-2. Set distance to source as 0
-3. Use a priority queue to always process the vertex with minimum distance
-4. For each vertex, relax all adjacent edges
-5. Continue until the destination is reached or all vertices are processed
 
-**Best for**: Finding the shortest path in graphs with non-negative edge weights
+1. Initialize all distances to ∞
+2. Set the source distance to 0
+3. Use a priority queue to repeatedly select the closest unprocessed vertex
+4. Relax all outgoing edges
+5. Continue until all vertices are processed or the target is reached
+
+**Best for**: Graphs with non-negative weights.
 
 **Learn more**: [Dijkstra's Algorithm on Wikipedia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
@@ -25,81 +26,92 @@ Single-source shortest path algorithm using a priority queue. Optimal for non-ne
 
 ## Bidirectional Dijkstra
 
-Runs Dijkstra's algorithm from both source and target simultaneously, meeting in the middle for faster results.
+Two Dijkstra searches—one forward from the source, one backward from the target—running simultaneously.
 
-**Time Complexity**: O((V + E) log V) with reduced constant factors
+**Time Complexity**: O((V + E) log V) (same asymptotics, lower constants)
 
 **How it works**:
-1. Run Dijkstra simultaneously from source (forward search) and destination (backward search)
-2. Terminate when the two searches meet
-3. Reconstruct the path by combining the forward and backward paths
+
+1. Run Dijkstra from the source and target in parallel
+2. Terminate when their frontiers meet
+3. Combine the two partial paths to reconstruct the shortest path
 
 **Advantages**:
-- Faster in practice than standard Dijkstra
-- Explores fewer vertices for point-to-point queries
-- Still guarantees optimal solution
 
-**Best for**: Point-to-point shortest path queries where you know both source and destination
+- Much faster in practice for point-to-point routing
+- Explores fewer nodes
+- Still produces optimal shortest paths
+
+**Best for**: Point-to-point navigation where both endpoints are known.
 
 **Learn more**: [Bidirectional Search on Wikipedia](https://en.wikipedia.org/wiki/Bidirectional_search)
 
 ---
 
-## Bellman-Ford Algorithm
+## Bellman–Ford Algorithm
 
-Single-source shortest path algorithm that handles negative edge weights and detects negative cycles.
+A shortest-path algorithm that supports negative edge weights and detects negative cycles.
 
 **Time Complexity**: O(V × E)
 
 **How it works**:
-1. Initialize distances from source to all vertices as infinite
-2. Set distance to source as 0
-3. Relax all edges V-1 times
-4. Check for negative cycles by attempting one more relaxation
+
+1. Initialize all distances
+2. Relax all edges V − 1 times
+3. Perform a final relaxation pass to detect negative cycles
 
 **Advantages**:
-- Can handle negative edge weights
+
+- Works when negative weights are present
 - Detects negative cycles
-- Simpler implementation than Dijkstra
+- Conceptually simple
 
 **Disadvantages**:
-- Slower than Dijkstra for graphs without negative weights
 
-**Best for**: Graphs with negative edge weights, or when negative cycle detection is needed
+- Slow on large graphs
+- Slower than Dijkstra when all edges are non-negative
+
+**Best for**: Graphs where negative weights or cycle detection are relevant.
 
 **Learn more**: [Bellman-Ford Algorithm on Wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
 
 ---
 
-## BMSSP-Inspired Shortest-Path Visualization
+## BMSSP-Inspired Performance Simulator (Not an Algorithm Implementation)
 
-A visualization inspired by the **Bounded Multi-Source Shortest Paths (BMSSP)** algorithm, adapted for educational single-source/single-destination scenarios.
+RouteRush Island includes a feature inspired by the **Bounded Multi-Source Shortest Paths (BMSSP)** algorithm, but it is **not an implementation of BMSSP**.
 
-### Implementation Overview
+Instead, it is a **didactic performance simulator** used to illustrate ideas such as frontier shrinking, bounded searches, and recursive behaviors.
 
-This implementation includes:
+### What the Simulator Actually Does
 
-- **Recursive exploration** with frontier shrinking
-- **Bellman-Ford-style relaxations** for source-set reduction
-- **Pivot selection** from the current frontier
-- **Bounded Dijkstra** within distance thresholds
+- Finds the real shortest path using **Bidirectional Dijkstra**
+- Records timing/expansion data from the Dijkstra run
+- Uses this data to **simulate BMSSP-like timing behavior**
+- Provides a conceptual visualization of frontier reduction, pivots, and bounded search
 
-### Key Concepts
+### What Real BMSSP Contains (Not Included Here)
 
-1. **Source Set Shrinking**: Reduces the set of active sources using Bellman-Ford-like relaxations
-2. **Pivot Selection**: Chooses strategic pivot vertices from the frontier
-3. **Bounded Search**: Runs Dijkstra-style search within a distance bound
-4. **Recursive Divide-and-Conquer**: Breaks down the problem into smaller subproblems
+The actual BMSSP algorithm (Duan et al., 2025) involves:
+
+- **Recursive frontier partitioning**
+- **Pivot-based bounded Dijkstra**
+- **True batch multi-source shortest-path queries**
+- **O(m log^(2/3) n)** theoretical running time
+- Specialized engineering for large-scale graphs
+
+**None of these mechanisms are implemented in this project.**
 
 ### Educational Purpose
 
-This implementation is designed to help users understand:
-- Multi-source shortest path concepts
-- Frontier-based search techniques
-- Hybrid algorithm approaches
-- Recursive algorithm design
+The simulator helps learners understand:
 
-> **Important**: See [BMSSP Technical Disclaimer](bmssp_disclaimer.md) for details about the limitations of this educational implementation.
+- High-level ideas behind modern shortest-path acceleration
+- Why algorithms shrink frontiers or introduce bounds
+- What recursive, divide-and-conquer structure looks like
+- How multi-source ideas differ from classical SSSP
+
+> **Important**: See the full [BMSSP Technical Disclaimer](bmssp_disclaimer.md).
 
 ---
 
@@ -107,20 +119,20 @@ This implementation is designed to help users understand:
 
 | Algorithm | Time Complexity | Negative Weights | Use Case |
 |-----------|----------------|------------------|----------|
-| Dijkstra | O((V + E) log V) | ❌ No | General shortest path |
-| Bidirectional Dijkstra | O((V + E) log V)* | ❌ No | Point-to-point queries |
-| Bellman-Ford | O(V × E) | ✅ Yes | Negative weights, cycle detection |
-| BMSSP-Inspired | Varies | Depends | Educational visualization |
+| **Dijkstra** | O((V + E) log V) | ❌ No | General shortest paths |
+| **Bidirectional Dijkstra** | O((V + E) log V)* | ❌ No | Point-to-point routing |
+| **Bellman-Ford** | O(V × E) | ✅ Yes | Negative weights + cycle detection |
+| **BMSSP-Inspired Simulator** | N/A (not an algorithm) | N/A | Educational visualization only |
 
-*With reduced constant factors
+*Reduced constant factors compared to standard Dijkstra.
 
 ---
 
 ## Further Reading
 
-- **Introduction to Algorithms** (CLRS) - Comprehensive algorithm textbook
-- **Algorithm Design Manual** by Steven Skiena - Practical algorithm design
-- **Competitive Programming** resources - Real-world algorithm applications
+- **Introduction to Algorithms (CLRS)** — Foundational reference
+- **Algorithm Design Manual (Skiena)** — Intuition-focused approach
+- **Competitive Programming 3** — Practical problem-solving
 
 ---
 
