@@ -1,0 +1,62 @@
+{
+  "name": "traffic-simulator",
+  "version": "1.0.0",
+  "description": "Gamified Traffic Simulator Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "minify": "node build-scripts/minify.js",
+    "build": "npm run minify && electron-builder",
+    "build:win": "npm run minify && electron-builder --win",
+    "build:linux": "npm run minify && electron-builder --linux",
+    "build:mac": "npm run minify && electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.routerushisland.app",
+    "productName": "RouteRush Island",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "RouteRush Island"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/icon.png",
+      "category": "Education"
+    }
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "electron": "^39.1.0",
+    "electron-builder": "^26.0.12",
+    "html-minifier-terser": "^7.2.0",
+    "javascript-obfuscator": "^4.1.1"
+  }
+}

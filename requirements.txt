@@ -1,0 +1,83 @@
+# RouteRush Island - Traffic Algorithm Simulator
+# Electron Desktop Application Requirements
+
+# ==============================================
+# Node.js & npm Version Requirements
+# ==============================================
+# Node.js: v14.x or higher (v18.x recommended)
+# npm: v6.x or higher (v9.x recommended)
+
+# ==============================================
+# Core Dependencies
+# ==============================================
+# These dependencies are listed in package.json and will be installed via npm
+
+# Production Dependencies:
+# - None (standalone Electron app)
+
+# Development Dependencies:
+electron@^39.1.0                    # Electron framework for desktop apps
+electron-builder@^26.0.12           # Build and package Electron apps
+html-minifier-terser@^7.2.0         # HTML minification
+clean-css-cli@^5.6.3                # CSS minification
+javascript-obfuscator@^4.1.1        # JavaScript obfuscation for production
+
+# ==============================================
+# External CDN Resources (loaded at runtime)
+# ==============================================
+# Tone.js v14.8.49                  # Audio synthesis library (loaded from CDN)
+# - https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js
+
+# ==============================================
+# Build Tools & System Requirements
+# ==============================================
+
+# For Windows builds:
+# - Windows 7 or later
+# - Visual Studio Build Tools (optional, for native modules)
+
+# For macOS builds:
+# - macOS 10.13 or later
+# - Xcode Command Line Tools
+
+# For Linux builds:
+# - Ubuntu 18.04 or later (or equivalent)
+# - Build essentials: build-essential, libssl-dev
+
+# ==============================================
+# Installation Instructions
+# ==============================================
+
+# 1. Install Node.js and npm:
+#    Download from: https://nodejs.org/
+
+# 2. Clone the repository:
+#    git clone <repository-url>
+#    cd traffic-simulator-desktop
+
+# 3. Install dependencies:
+#    npm install
+
+# 4. Run in development mode:
+#    npm start
+
+# 5. Build for your platform:
+#    npm run build:win    (Windows)
+#    npm run build:mac    (macOS)
+#    npm run build:linux  (Linux)
+
+# ==============================================
+# Optional Tools
+# ==============================================
+# Git - for version control
+# Visual Studio Code - recommended IDE
+# Chrome DevTools - for debugging (built into Electron)
+
+# ==============================================
+# Notes
+# ==============================================
+# - This is an Electron-based application, not a Python project
+# - The main application is a standalone HTML file with embedded CSS and JavaScript
+# - All JavaScript dependencies are either bundled or loaded from CDN
+# - No server-side components required
+# - Cross-platform compatible (Windows, macOS, Linux)
