@@ -23,6 +23,7 @@ A beautiful, gamified desktop application for visualizing and comparing pathfind
 ---
 
 ## Table of Contents
+- [Demo & Tutorial](#-demo--tutorial)
 - [Features](#-features)
 - [What Makes This Special](#-what-makes-this-special)
 - [The Story Behind RouteRush Island](#-the-story-behind-routerush-island)
@@ -33,6 +34,15 @@ A beautiful, gamified desktop application for visualizing and comparing pathfind
 - [For Developers](#-for-developers)
 - [Contributing](#-contributing)
 - [License](#-license)
+
+---
+
+## 📺 Demo & Tutorial
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=kxpqzrJj5qg">
+    <img src="https://img.youtube.com/vi/kxpqzrJj5qg/0.jpg" alt="RouteRush Island - Complete Demo and Tutorial" width="100%">
+  </a>
+</div>
 
 ---
 
